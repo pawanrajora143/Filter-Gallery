@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Data from "../data/Data";
-import { BrowserRouter , Routes , Route , NavLink } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
 const Card = () => {
   const [searchItem, setSearchItem] = useState("");
@@ -26,24 +26,12 @@ const Card = () => {
         />
       </div>
 
-
-
       <div className="btns">
-
-
-      <BrowserRouter>
-
-     
-
-        <NavLink to="All" className={(e)=>e.isActive ? "active" : ""}><button onClick={() => filterItem("All")}>All</button></NavLink>
+        <button onClick={() => filterItem("All")}>All</button>
         <button onClick={() => filterItem("nature")}>Nature</button>
 
         <button onClick={() => filterItem("phone")}>Phone</button>
         <button onClick={() => filterItem("animal")}>Animal</button>
-
-
-
-        </BrowserRouter>
       </div>
 
       <div className="cards">
@@ -51,7 +39,9 @@ const Card = () => {
           .filter((val) => {
             if (searchItem === "") {
               return val;
-            } else if (val.title.toLowerCase().includes(searchItem.toLowerCase())) {
+            } else if (
+              val.title.toLowerCase().includes(searchItem.toLowerCase())
+            ) {
               return val;
             }
             return null;
